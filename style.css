@@ -1,77 +1,127 @@
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: hsl(0, 0%, 89%);
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    align-items: center;
+/* Reset & base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-.weatherForm{
-    margin: 20px;
+
+body {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  padding-top: 60px;
+  color: #222;
 }
-.inputCity{
-    padding: 11px;
-    font-size: 2rem;
-    font-weight: bold;
-    margin: 10px;
-    border: 2px black solid;
-    border-radius: 15px;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    -ms-border-radius: 15px;
-    -o-border-radius: 15px;
+
+/* Form */
+.weatherForm {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 25px 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-button[type="submit"]{
-    padding: 20px;
-    font-size: medium;
-    border-radius: 13px;
-    -webkit-border-radius: 13px;
-    -moz-border-radius: 13px;
-    -ms-border-radius: 13px;
-    -o-border-radius: 13px;
-    background-color: blue;
-    color: white;
+
+.inputCity {
+  padding: 12px 20px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: 2px solid #0077ff;
+  border-radius: 12px;
+  width: 250px;
+  transition: all 0.2s ease;
 }
-.card{
-    background: linear-gradient(180deg, rgba(60, 209, 38, 0.454),rgba(251, 255, 0, 0.354));
-    padding: 100px;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 2px 2px 5px rgb(47, 47, 47);
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
+
+.inputCity:focus {
+  outline: none;
+  border-color: #0057c2;
+  box-shadow: 0 0 5px #0077ff;
 }
-h1{
-    font-size: 3rem;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bolder;
-    margin: -25px;
-    padding: 0px;
+
+button[type="submit"] {
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #0077ff, #00c6ff);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.suhu{
-    font-size: 35px;
-    margin: 25px;
-    margin-bottom: -10px;
+
+button[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(0, 119, 255, 0.4);
 }
-.cuaca{
-    font-size: 20px;
-    margin-top: -10px;
+
+/* Card */
+.card {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  background: white;
+  border-radius: 25px;
+  padding: 40px 60px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.4s ease;
 }
-.kelembapan{
-    font-size: 20px;
-    margin-top: 25px;
+
+.card h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #0057c2;
 }
-.emoji{
-    font-size: 50px;
-    margin-top: 3px;
-    margin-bottom: 5px;
+
+.suhu {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-top: 5px;
+  color: #333;
 }
-.error{
-    color: red;
-    font-weight: bold;
-    font-size: 40px;
+
+.cuaca {
+  font-size: 1.3rem;
+  color: #444;
+  margin-top: 5px;
+  text-transform: capitalize;
+}
+
+.kelembapan {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  color: #555;
+}
+
+.emoji {
+  font-size: 4rem;
+  margin-top: 10px;
+}
+
+/* Error */
+.error {
+  color: red;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
